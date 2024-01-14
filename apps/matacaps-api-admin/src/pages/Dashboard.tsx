@@ -5,7 +5,7 @@ import { Title } from "react-admin";
 const Dashboard = () => (
   <Card>
     <Title title="Welcome to the administration" />
-    <CardContent>Welcome</CardContent>
+    <CardContent>Welcome to My Dashboard</CardContent>
   </Card>
 );
 

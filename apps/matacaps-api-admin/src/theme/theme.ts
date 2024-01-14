@@ -4,7 +4,7 @@ import { merge } from "lodash";
 import createPalette from "@material-ui/core/styles/createPalette";
 
 const palette = createPalette(
-  merge({}, defaultTheme.palette, {
+  merge({}, defaultTheme.typography, {
     primary: {
       main: "#20a4f3",
     },
