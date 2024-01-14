@@ -28,3 +28,11 @@ model Member {
   profilePic String?
   updatedAt  DateTime  @updatedAt
 }
+
+model Document {
+  createdAt    DateTime @default(now())
+  id           String   @id @default(cuid())
+  thumbnailUrl String
+  updatedAt    DateTime @updatedAt
+  url          String
+}

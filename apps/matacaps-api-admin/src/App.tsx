@@ -13,6 +13,10 @@ import { MemberList } from "./member/MemberList";
 import { MemberCreate } from "./member/MemberCreate";
 import { MemberEdit } from "./member/MemberEdit";
 import { MemberShow } from "./member/MemberShow";
+import { DocumentList } from "./document/DocumentList";
+import { DocumentCreate } from "./document/DocumentCreate";
+import { DocumentEdit } from "./document/DocumentEdit";
+import { DocumentShow } from "./document/DocumentShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -52,6 +56,13 @@ const App = (): React.ReactElement => {
           edit={MemberEdit}
           create={MemberCreate}
           show={MemberShow}
+        />
+        <Resource
+          name="Document"
+          list={DocumentList}
+          edit={DocumentEdit}
+          create={DocumentCreate}
+          show={DocumentShow}
         />
       </Admin>
     </div>
