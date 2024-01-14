@@ -11,23 +11,35 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { JsonFilter } from "../../util/JsonFilter";
+import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional } from "class-validator";
-import { StringFilter } from "../../util/StringFilter";
+import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 @InputType()
 class MemberWhereInput {
   @ApiProperty({
     required: false,
-    type: JsonFilter,
+    type: StringFilter,
   })
-  @Type(() => JsonFilter)
+  @Type(() => StringFilter)
   @IsOptional()
-  @Field(() => JsonFilter, {
+  @Field(() => StringFilter, {
     nullable: true,
   })
-  address?: JsonFilter;
+  address?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: DateTimeNullableFilter,
+  })
+  @Type(() => DateTimeNullableFilter)
+  @IsOptional()
+  @Field(() => DateTimeNullableFilter, {
+    nullable: true,
+  })
+  dob?: DateTimeNullableFilter;
 
   @ApiProperty({
     required: false,
@@ -61,6 +73,17 @@ class MemberWhereInput {
     nullable: true,
   })
   lastName?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  profilePic?: StringNullableFilter;
 }
 
 export { MemberWhereInput as MemberWhereInput };

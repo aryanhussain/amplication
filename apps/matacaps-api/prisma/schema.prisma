@@ -19,10 +19,12 @@ model User {
 }
 
 model Member {
-  address   Json?
-  createdAt DateTime @default(now())
-  firstName String
-  id        String   @id @default(cuid())
-  lastName  String
-  updatedAt DateTime @updatedAt
+  address    String
+  createdAt  DateTime  @default(now())
+  dob        DateTime?
+  firstName  String
+  id         String    @id @default(cuid())
+  lastName   String
+  profilePic String?
+  updatedAt  DateTime  @updatedAt
 }

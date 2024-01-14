@@ -1,7 +1,7 @@
-import { InputJsonValue } from "../../types";
-
 export type MemberCreateInput = {
-  address?: InputJsonValue;
+  address: string;
+  dob?: Date | null;
   firstName: string;
   lastName: string;
+  profilePic?: string | null;
 };

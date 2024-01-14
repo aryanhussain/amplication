@@ -51,9 +51,11 @@ export class MemberControllerBase {
       select: {
         address: true,
         createdAt: true,
+        dob: true,
         firstName: true,
         id: true,
         lastName: true,
+        profilePic: true,
         updatedAt: true,
       },
     });
@@ -78,9 +80,11 @@ export class MemberControllerBase {
       select: {
         address: true,
         createdAt: true,
+        dob: true,
         firstName: true,
         id: true,
         lastName: true,
+        profilePic: true,
         updatedAt: true,
       },
     });
@@ -106,9 +110,11 @@ export class MemberControllerBase {
       select: {
         address: true,
         createdAt: true,
+        dob: true,
         firstName: true,
         id: true,
         lastName: true,
+        profilePic: true,
         updatedAt: true,
       },
     });
@@ -143,9 +149,11 @@ export class MemberControllerBase {
         select: {
           address: true,
           createdAt: true,
+          dob: true,
           firstName: true,
           id: true,
           lastName: true,
+          profilePic: true,
           updatedAt: true,
         },
       });
@@ -179,9 +187,11 @@ export class MemberControllerBase {
         select: {
           address: true,
           createdAt: true,
+          dob: true,
           firstName: true,
           id: true,
           lastName: true,
+          profilePic: true,
           updatedAt: true,
         },
       });

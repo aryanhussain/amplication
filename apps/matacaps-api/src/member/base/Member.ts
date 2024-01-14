@@ -11,23 +11,18 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsJSONValue } from "../../validators";
-import { IsOptional, IsDate, IsString } from "class-validator";
-import { GraphQLJSON } from "graphql-type-json";
-import { JsonValue } from "type-fest";
+import { IsString, IsDate, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 
 @ObjectType()
 class Member {
   @ApiProperty({
-    required: false,
+    required: true,
+    type: String,
   })
-  @IsJSONValue()
-  @IsOptional()
-  @Field(() => GraphQLJSON, {
-    nullable: true,
-  })
-  address!: JsonValue;
+  @IsString()
+  @Field(() => String)
+  address!: string;
 
   @ApiProperty({
     required: true,
@@ -36,6 +31,17 @@ class Member {
   @Type(() => Date)
   @Field(() => Date)
   createdAt!: Date;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @IsOptional()
+  @Field(() => Date, {
+    nullable: true,
+  })
+  dob!: Date | null;
 
   @ApiProperty({
     required: true,
@@ -60,6 +66,17 @@ class Member {
   @IsString()
   @Field(() => String)
   lastName!: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  profilePic!: string | null;
 
   @ApiProperty({
     required: true,
