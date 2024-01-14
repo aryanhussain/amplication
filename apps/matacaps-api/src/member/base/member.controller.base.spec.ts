@@ -18,33 +18,45 @@ import { MemberService } from "../member.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  address: "exampleAddress",
   createdAt: new Date(),
+  dob: new Date(),
   firstName: "exampleFirstName",
   id: "exampleId",
   lastName: "exampleLastName",
+  profilePic: "exampleProfilePic",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
+  address: "exampleAddress",
   createdAt: new Date(),
+  dob: new Date(),
   firstName: "exampleFirstName",
   id: "exampleId",
   lastName: "exampleLastName",
+  profilePic: "exampleProfilePic",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
+    address: "exampleAddress",
     createdAt: new Date(),
+    dob: new Date(),
     firstName: "exampleFirstName",
     id: "exampleId",
     lastName: "exampleLastName",
+    profilePic: "exampleProfilePic",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
+  address: "exampleAddress",
   createdAt: new Date(),
+  dob: new Date(),
   firstName: "exampleFirstName",
   id: "exampleId",
   lastName: "exampleLastName",
+  profilePic: "exampleProfilePic",
   updatedAt: new Date(),
 };
 
@@ -131,6 +143,7 @@ describe("Member", () => {
       .expect({
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
+        dob: CREATE_RESULT.dob.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       });
   });
@@ -143,6 +156,7 @@ describe("Member", () => {
         {
           ...FIND_MANY_RESULT[0],
           createdAt: FIND_MANY_RESULT[0].createdAt.toISOString(),
+          dob: FIND_MANY_RESULT[0].dob.toISOString(),
           updatedAt: FIND_MANY_RESULT[0].updatedAt.toISOString(),
         },
       ]);
@@ -166,6 +180,7 @@ describe("Member", () => {
       .expect({
         ...FIND_ONE_RESULT,
         createdAt: FIND_ONE_RESULT.createdAt.toISOString(),
+        dob: FIND_ONE_RESULT.dob.toISOString(),
         updatedAt: FIND_ONE_RESULT.updatedAt.toISOString(),
       });
   });
@@ -179,6 +194,7 @@ describe("Member", () => {
       .expect({
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
+        dob: CREATE_RESULT.dob.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       })
       .then(function () {

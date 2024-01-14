@@ -14,9 +14,11 @@ export const MemberList = (props: ListProps): React.ReactElement => {
       <Datagrid rowClick="show">
         <TextField label="address" source="address" />
         <DateField source="createdAt" label="Created At" />
+        <TextField label="dob" source="dob" />
         <TextField label="first_name" source="firstName" />
         <TextField label="ID" source="id" />
         <TextField label="last_name" source="lastName" />
+        <TextField label="profile_pic" source="profilePic" />
         <DateField source="updatedAt" label="Updated At" />
       </Datagrid>
     </List>

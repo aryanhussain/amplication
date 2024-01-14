@@ -50,6 +50,17 @@ class MemberOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+  dob?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @IsOptional()
+  @IsEnum(SortOrder)
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
   firstName?: SortOrder;
 
   @ApiProperty({
@@ -73,6 +84,17 @@ class MemberOrderByInput {
     nullable: true,
   })
   lastName?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @IsOptional()
+  @IsEnum(SortOrder)
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  profilePic?: SortOrder;
 
   @ApiProperty({
     required: false,
