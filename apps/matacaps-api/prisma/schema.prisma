@@ -17,3 +17,12 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Member {
+  address   Json?
+  createdAt DateTime @default(now())
+  firstName String
+  id        String   @id @default(cuid())
+  lastName  String
+  updatedAt DateTime @updatedAt
+}
